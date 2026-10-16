@@ -12,4 +12,4 @@ JavaScript (se aplicável)
 📄 Licença
 Este projeto está disponível sob a licença MIT. Sinta-se à vontade para utilizar como referência ou base para seus próprios projetos.
 
-Desenvolvido por Seu Nome.
+Desenvolvido por Eduardo Araújo.
