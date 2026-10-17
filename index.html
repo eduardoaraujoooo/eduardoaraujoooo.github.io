@@ -147,6 +147,34 @@ header .brand{padding:0}.tg{margin-top:0}
 .trow{display:flex;width:max-content}.trow:nth-child(2){padding-left:2.2rem}
 .tags.set{flex-wrap:nowrap;width:max-content;flex:none;gap:.6rem;padding-right:.6rem}
 .tc .tags li{font-size:.95rem;padding:.3rem .85rem;white-space:nowrap}
+.ciclo{display:grid;gap:1.6rem;grid-template-columns:1fr}
+@media(min-width:1000px){.ciclo{grid-template-columns:1fr 1fr;gap:.6rem}}
+.stp{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.stp li{background:var(--t100);padding:1.1rem 1.7rem 1.1rem 1.1rem;min-height:140px;border-radius:.4rem 0 0 .4rem;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%)}
+.grp.b .stp li{background:var(--t200)}
+.stp .n{display:block;font:700 1.5rem/1 'Figtree',sans-serif;color:var(--t600);margin-bottom:.7rem}
+.stp h3{margin:0 0 .3rem;font-size:1rem}.stp p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.4}
+.gl{position:relative;margin:.8rem 0 0;padding-top:1rem;text-align:center;font:600 .9rem 'Figtree',sans-serif;color:var(--muted)}
+.gl::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;border:1.5px solid var(--muted);border-top:0}
+@media(max-width:600px){.stp{grid-template-columns:1fr}.stp li{clip-path:none;border-radius:.5rem;min-height:0;padding:1rem}}
+.ciclo{display:flex;flex-wrap:nowrap;gap:.5rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:thin}
+.grp{flex:1 0 auto}
+.stp{display:flex;gap:.4rem}
+.stp li{flex:1 0 140px;min-height:130px;padding:1rem 1.4rem 1rem 1rem}
+.stp h3{font-size:1rem}.stp p{font-size:.82rem}
+.gl{opacity:0;transition:opacity .2s}
+.grp:hover .gl,.grp:focus-within .gl,.grp:focus .gl{opacity:1}
+.grp:focus-visible{outline:2px solid var(--t600);outline-offset:3px;border-radius:.4rem}
+.ciclo{overflow:visible;flex-wrap:wrap;padding-bottom:0}
+.grp{flex:1 1 100%;min-width:0}
+.stp li{flex:1 1 0;min-width:0}
+@media(min-width:960px){.ciclo{flex-wrap:nowrap}.grp{flex:1 1 0}}
+@media(max-width:600px){.stp{flex-direction:column}.stp li{flex:none;min-height:0;clip-path:none;border-radius:.5rem;padding:1rem}}
+:root{--band:#152428}
+:root[data-theme="light"]{--band:#E0ECF0}
+section,.metrics,footer{border-top:0}
+#home section:nth-of-type(even){background:var(--band);box-shadow:0 0 0 100vmax var(--band);clip-path:inset(0 -100vmax)}
+.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 </style>
 <script>try{var t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
@@ -182,6 +210,22 @@ header .brand{padding:0}.tg{margin-top:0}
       </div>
     </section>
 
+    <section id="ciclo">
+      <h2>Etapas do trabalho</h2>
+      <div class="ciclo">
+        <div class="grp" tabindex="0"><ol class="stp">
+          <li><h3>Diagnóstico</h3><p>Definição de problema e ideação</p></li>
+          <li><h3>Ideação</h3><p>Desenho de jornadas e fluxos</p></li>
+          <li><h3>Curadoria</h3><p>Estruturação de bases e Ground Truth</p></li>
+        </ol><p class="gl">Desenho da solução</p></div>
+        <div class="grp b" tabindex="0"><ol class="stp">
+          <li><h3>Qualidade</h3><p>Definição de critérios e análise de métricas</p></li>
+          <li><h3>Adoção</h3><p>Playbooks e Treinamentos</p></li>
+          <li><h3>Alinhamento</h3><p>Integração Produto/Tech</p></li>
+        </ol><p class="gl">Governança</p></div>
+      </div>
+    </section>
+
     <section id="projetos">
       <h2>Projetos</h2>
       <p class="intro">Cases de IA conversacional, prompts e governança de conteúdo. Cada card leva ao artigo completo no Medium.</p>
@@ -192,9 +236,9 @@ header .brand{padding:0}.tg{margin-top:0}
           <dl><div><dt>Contexto</dt><dd>A BIA roda sobre orquestradores, classificadores e guardrails que crescem a cada ramo.</dd></div><div><dt>O que fiz</dt><dd>Auditei e revisei a estrutura dos prompts e desenhei fluxos de desambiguação.</dd></div><div><dt>Resultado</dt><dd>Instruções mais claras e uma arquitetura mais fácil de manter. Números em validação.</dd></div></dl>
           <ul class="tags"><li>Prompts</li><li>Guardrails</li><li>Desambiguação</li></ul><a class="lk" href="https://medium.com/@eduardoaraujoo" target="_blank" rel="noopener">Ler no Medium</a></article><article class="cc"><span class="k">03 · Governança de conteúdo</span><h3>Uma base que a IA consegue usar</h3><span class="chip">Métrica em validação</span>
           <dl><div><dt>Contexto</dt><dd>Em sistemas RAG, a qualidade da resposta depende da qualidade da base de conhecimento.</dd></div><div><dt>O que fiz</dt><dd>Criei uma metodologia de segmentação e levei o método a treinamentos internos.</dd></div><div><dt>Resultado</dt><dd>Bases mais organizadas e um método que outras pessoas aplicam. Números em validação.</dd></div></dl>
-          <ul class="tags"><li>RAG</li><li>Curadoria</li><li>Segmentação</li></ul><a class="lk" href="https://medium.com/@eduardoaraujoo" target="_blank" rel="noopener">Ler no Medium</a></article><article class="cc"><span class="k">04 · Taxonomia e busca · Exemplo fictício</span><h3>Um vocabulário único para encontrar tudo</h3><span class="chip">Métrica em validação</span>
-          <dl><div><dt>Contexto</dt><dd>Equipes diferentes davam nomes diferentes ao mesmo produto, o que atrapalhava a busca e as respostas da IA.</dd></div><div><dt>O que fiz</dt><dd>Mapeei os termos em uso e criei um vocabulário controlado, com sinônimos e regras de uso.</dd></div><div><dt>Resultado</dt><dd>Termos padronizados e busca mais previsível. Números em validação.</dd></div></dl>
-          <ul class="tags"><li>Taxonomia</li><li>Vocabulário controlado</li><li>Busca</li></ul><a class="lk" href="https://medium.com/@eduardoaraujoo" target="_blank" rel="noopener">Ler no Medium</a></article><article class="cc"><span class="k">05 · Content Ops · Exemplo fictício</span><h3>Um fluxo para o conteúdo não travar</h3><span class="chip">Métrica em validação</span>
+          <ul class="tags"><li>RAG</li><li>Curadoria</li><li>Segmentação</li></ul><a class="lk" href="https://medium.com/@eduardoaraujoo" target="_blank" rel="noopener">Ler no Medium</a></article><article class="cc"><span class="k">04 · Arquitetura da informação</span><h3>Simplificando a jornada da dúvida no Mubi</h3><span class="chip">90 → 62 artigos na proposta</span>
+          <dl><div><dt>Contexto</dt><dd>Estudo de caso do curso de UX Writing da Awari (2021) sobre a central de ajuda do Mubi, cujo único caminho pelo site era um chatbot.</dd></div><div><dt>O que fiz</dt><dd>Fiz benchmarking e pesquisa com usuários, mapeei fluxos, propus nova taxonomia e breadcrumbs e prototipei a jornada com e sem login.</dd></div><div><dt>Resultado</dt><dd>Proposta que reduz as categorias de 9 para 6 e os artigos de 90 para 62, eliminando 28 repetidos. Os testes de usabilidade ficaram como próximo passo.</dd></div></dl>
+          <ul class="tags"><li>Arquitetura da informação</li><li>Taxonomia</li><li>UX Research</li></ul><a class="lk" href="https://eduardoaraujoo.medium.com/simplificando-a-jornada-da-d%C3%BAvida-no-mubi-c8c1aadbc6d1" target="_blank" rel="noopener">Ler no Medium</a></article><article class="cc"><span class="k">05 · Content Ops · Exemplo fictício</span><h3>Um fluxo para o conteúdo não travar</h3><span class="chip">Métrica em validação</span>
           <dl><div><dt>Contexto</dt><dd>Os textos do assistente passavam por várias mãos, sem etapas claras de revisão e publicação.</dd></div><div><dt>O que fiz</dt><dd>Desenhei um fluxo de criação, revisão e publicação, com checklists e responsáveis por etapa.</dd></div><div><dt>Resultado</dt><dd>Entregas mais previsíveis e menos retrabalho. Números em validação.</dd></div></dl>
           <ul class="tags"><li>Content Ops</li><li>Processos</li><li>Revisão</li></ul><a class="lk" href="https://medium.com/@eduardoaraujoo" target="_blank" rel="noopener">Ler no Medium</a></article><article class="cc"><span class="k">06 · Estrutura agêntica · Exemplo fictício</span><h3>Agentes que escrevem com a voz da marca</h3><span class="chip">Métrica em validação</span>
           <dl><div><dt>Contexto</dt><dd>A produção de conteúdo conversacional crescia mais rápido do que a capacidade de revisão do time.</dd></div><div><dt>O que fiz</dt><dd>Criei agentes e skills com regras de tom e formato para gerar rascunhos que o time revisa.</dd></div><div><dt>Resultado</dt><dd>Rascunhos mais alinhados ao padrão editorial. Números em validação.</dd></div></dl>
