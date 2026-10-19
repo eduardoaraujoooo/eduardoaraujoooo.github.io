@@ -147,34 +147,21 @@ header .brand{padding:0}.tg{margin-top:0}
 .trow{display:flex;width:max-content}.trow:nth-child(2){padding-left:2.2rem}
 .tags.set{flex-wrap:nowrap;width:max-content;flex:none;gap:.6rem;padding-right:.6rem}
 .tc .tags li{font-size:.95rem;padding:.3rem .85rem;white-space:nowrap}
-.ciclo{display:grid;gap:1.6rem;grid-template-columns:1fr}
-@media(min-width:1000px){.ciclo{grid-template-columns:1fr 1fr;gap:.6rem}}
-.stp{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
-.stp li{background:var(--t100);padding:1.1rem 1.7rem 1.1rem 1.1rem;min-height:140px;border-radius:.4rem 0 0 .4rem;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%)}
-.grp.b .stp li{background:var(--t200)}
-.stp .n{display:block;font:700 1.5rem/1 'Figtree',sans-serif;color:var(--t600);margin-bottom:.7rem}
-.stp h3{margin:0 0 .3rem;font-size:1rem}.stp p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.4}
-.gl{position:relative;margin:.8rem 0 0;padding-top:1rem;text-align:center;font:600 .9rem 'Figtree',sans-serif;color:var(--muted)}
+.ciclo{display:flex;flex-wrap:wrap;gap:1.8rem 0}
+.grp{flex:1 1 100%;min-width:0}
+@media(min-width:960px){.ciclo{flex-wrap:nowrap}.grp{flex:1 1 0}}
+.stp{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);position:relative}
+.stp::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:var(--t600)}
+.stp li{display:grid;grid-template-rows:1fr 32px 32px 1fr;min-height:280px;padding-right:.9rem}
+.stp .tk{width:2px;background:var(--t600);justify-self:start}
+.stp .u .txt{grid-row:1;align-self:end;padding-bottom:.6rem}.stp .u .tk{grid-row:2}
+.stp .d .tk{grid-row:3}.stp .d .txt{grid-row:4;padding-top:.6rem}
+.stp h3{margin:0 0 .25rem;font-size:1rem}.stp p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.45}
+.gl{position:relative;margin:.8rem 0 0;padding-top:1rem;text-align:center;font:600 .9rem 'Figtree',sans-serif;color:var(--muted);opacity:0;transition:opacity .2s}
 .gl::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;border:1.5px solid var(--muted);border-top:0}
-@media(max-width:600px){.stp{grid-template-columns:1fr}.stp li{clip-path:none;border-radius:.5rem;min-height:0;padding:1rem}}
-.ciclo{display:flex;flex-wrap:nowrap;gap:.5rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:thin}
-.grp{flex:1 0 auto}
-.stp{display:flex;gap:.4rem}
-.stp li{flex:1 0 140px;min-height:130px;padding:1rem 1.4rem 1rem 1rem}
-.stp h3{font-size:1rem}.stp p{font-size:.82rem}
-.gl{opacity:0;transition:opacity .2s}
 .grp:hover .gl,.grp:focus-within .gl,.grp:focus .gl{opacity:1}
 .grp:focus-visible{outline:2px solid var(--t600);outline-offset:3px;border-radius:.4rem}
-.ciclo{overflow:visible;flex-wrap:wrap;padding-bottom:0}
-.grp{flex:1 1 100%;min-width:0}
-.stp li{flex:1 1 0;min-width:0}
-@media(min-width:960px){.ciclo{flex-wrap:nowrap}.grp{flex:1 1 0}}
-@media(max-width:600px){.stp{flex-direction:column}.stp li{flex:none;min-height:0;clip-path:none;border-radius:.5rem;padding:1rem}}
-:root{--band:#152428}
-:root[data-theme="light"]{--band:#E0ECF0}
-section,.metrics,footer{border-top:0}
-#home section:nth-of-type(even){background:var(--band);box-shadow:0 0 0 100vmax var(--band);clip-path:inset(0 -100vmax)}
-.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:600px){.stp{grid-template-columns:1fr;border-left:2px solid var(--t600);margin-left:.4rem}.stp::before{display:none}.stp li{display:block;min-height:0;padding:0 0 1.2rem 1.2rem;position:relative}.stp li::before{content:"";position:absolute;left:-7px;top:.35rem;width:12px;height:12px;border-radius:50%;background:var(--t600)}.stp .tk{display:none}.stp .u .txt,.stp .d .txt{padding:0}}
 </style>
 <script>try{var t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
@@ -190,10 +177,10 @@ section,.metrics,footer{border-top:0}
     </div>
 
     <div class="metrics" aria-label="Números principais">
-      <div><b>8</b><span>anos de atuação em design e comunicação</span></div>
-      <div><b>6</b><span>ramos de seguros atendidos pela BIA</span></div>
-      <div><b>4</b><span>empresas em UX Writing e estratégia de conteúdo</span></div>
-      <div><b>6</b><span>cases em destaque</span></div>
+      <div><b>+600</b><span>conteúdos sob curadoria</span></div>
+      <div><b>+20</b><span>system prompts em produção</span></div>
+      <div><b>~95%</b><span>de groundedness em evals</span></div>
+      <div><b>+25%</b><span>de interações em 6 meses</span></div>
     </div>
 
     <section id="sobre">
@@ -207,22 +194,6 @@ section,.metrics,footer{border-top:0}
           <p>E há os jogos de luta, onde cada golpe é uma conversa: você lê o outro, responde, erra, aprende e tenta de novo.</p>
           
         </div>
-      </div>
-    </section>
-
-    <section id="ciclo">
-      <h2>Etapas do trabalho</h2>
-      <div class="ciclo">
-        <div class="grp" tabindex="0"><ol class="stp">
-          <li><h3>Diagnóstico</h3><p>Definição de problema e ideação</p></li>
-          <li><h3>Ideação</h3><p>Desenho de jornadas e fluxos</p></li>
-          <li><h3>Curadoria</h3><p>Estruturação de bases e Ground Truth</p></li>
-        </ol><p class="gl">Desenho da solução</p></div>
-        <div class="grp b" tabindex="0"><ol class="stp">
-          <li><h3>Qualidade</h3><p>Definição de critérios e análise de métricas</p></li>
-          <li><h3>Adoção</h3><p>Playbooks e Treinamentos</p></li>
-          <li><h3>Alinhamento</h3><p>Integração Produto/Tech</p></li>
-        </ol><p class="gl">Governança</p></div>
       </div>
     </section>
 
@@ -243,6 +214,22 @@ section,.metrics,footer{border-top:0}
           <ul class="tags"><li>Content Ops</li><li>Processos</li><li>Revisão</li></ul><a class="lk" href="https://medium.com/@eduardoaraujoo" target="_blank" rel="noopener">Ler no Medium</a></article><article class="cc"><span class="k">06 · Estrutura agêntica · Exemplo fictício</span><h3>Agentes que escrevem com a voz da marca</h3><span class="chip">Métrica em validação</span>
           <dl><div><dt>Contexto</dt><dd>A produção de conteúdo conversacional crescia mais rápido do que a capacidade de revisão do time.</dd></div><div><dt>O que fiz</dt><dd>Criei agentes e skills com regras de tom e formato para gerar rascunhos que o time revisa.</dd></div><div><dt>Resultado</dt><dd>Rascunhos mais alinhados ao padrão editorial. Números em validação.</dd></div></dl>
           <ul class="tags"><li>Agentes</li><li>Skills</li><li>Tom de voz</li></ul><a class="lk" href="https://medium.com/@eduardoaraujoo" target="_blank" rel="noopener">Ler no Medium</a></article>
+      </div>
+    </section>
+
+    <section id="ciclo">
+      <h2>Etapas do trabalho</h2>
+      <div class="ciclo">
+        <div class="grp" tabindex="0"><ol class="stp">
+          <li class="d"><div class="txt"><h3>Diagnóstico</h3><p>Definição de problema e ideação</p></div><span class="tk" aria-hidden="true"></span></li>
+          <li class="u"><div class="txt"><h3>Ideação</h3><p>Desenho de jornadas e fluxos</p></div><span class="tk" aria-hidden="true"></span></li>
+          <li class="d"><div class="txt"><h3>Curadoria</h3><p>Estruturação de bases e Ground Truth</p></div><span class="tk" aria-hidden="true"></span></li>
+        </ol><p class="gl">Desenho da solução</p></div>
+        <div class="grp b" tabindex="0"><ol class="stp">
+          <li class="u"><div class="txt"><h3>Qualidade</h3><p>Definição de critérios e análise de métricas</p></div><span class="tk" aria-hidden="true"></span></li>
+          <li class="d"><div class="txt"><h3>Adoção</h3><p>Playbooks e Treinamentos</p></div><span class="tk" aria-hidden="true"></span></li>
+          <li class="u"><div class="txt"><h3>Alinhamento</h3><p>Integração Produto/Tech</p></div><span class="tk" aria-hidden="true"></span></li>
+        </ol><p class="gl">Governança</p></div>
       </div>
     </section>
 
